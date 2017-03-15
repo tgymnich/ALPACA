@@ -1,0 +1,12 @@
+[submodule "3rdParty/tiny_xml"]
+	path = 3rdParty/tiny_xml
+	url = https://github.com/leethomason/tinyxml2.git
+[submodule "3rdParty/expression_toolkit"]
+	path = 3rdParty/expression_toolkit
+	url = https://github.com/ArashPartow/exprtk.git
+[submodule "3rdParty/Catch2"]
+	path = 3rdParty/Catch2
+	url = https://github.com/catchorg/Catch2.git
+[submodule "3rdParty/FakeIt"]
+	path = 3rdParty/FakeIt
+	url = https://github.com/HEM-RnD/FakeIt.git

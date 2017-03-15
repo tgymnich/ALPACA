@@ -1,0 +1,5 @@
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/documentation/
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/src/ @CMAKE_CURRENT_SOURCE_DIR@/doc
+CITE_BIB_FILES         = @CMAKE_CURRENT_SOURCE_DIR@/doc/references.bib
+RECURSIVE              = YES
+EXCLUDE                = @CMAKE_CURRENT_SOURCE_DIR@/src/3rdParty

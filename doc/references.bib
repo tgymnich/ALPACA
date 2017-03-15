@@ -1,0 +1,410 @@
+@article{Jiang1996,
+  author = {Jiang, G. S. and Shu, C. W.},
+  journal = {Journal of Computational Physics},
+  keywords = {ENO/WENO},
+  pages = {202--228},
+  title = {{Efficient implementation of weighted ENO schemes}},
+  volume = {126},
+  year = {1996}
+}
+
+@article{Hu2010,
+  author = {Hu, X. Y. and Wang, Q. and Adams, N. A.},
+  doi = {10.1016/j.jcp.2010.08.019},
+  issn = {00219991},
+  journal = {Journal of Computational Physics},
+  keywords = {ENO/WENO},
+  month = {nov},
+  number = {23},
+  pages = {8952--8965},
+  title = {{An adaptive central-upwind weighted essentially non-oscillatory scheme}},
+  url = {http://linkinghub.elsevier.com/retrieve/pii/S0021999110004560},
+  volume = {229},
+  year = {2010}
+}
+
+@article{Fu2016a,
+  abstract = {Although classical WENO schemes have achieved great success and are widely accepted, they exhibit several shortcomings. They are too dissipative for direct simulations of turbulence and lack robustness when very-high-order versions are applied to complex flows. In this paper, we propose a family of high-order targeted ENO schemes which are applicable for compressible-fluid simulations involving a wide range of flow scales. In order to increase the numerical robustness as compared to very-high-order classical WENO schemes, the reconstruction dynamically assembles a set of low-order candidate stencils with incrementally increasing width. While discontinuities and small-scale fluctuations are efficiently separated, the numerical dissipation is significantly diminished by an ENO-like stencil selection, which either applies a candidate stencil with its original linear weight, or removes its contribution when it is crossed by a discontinuity. The background linear scheme is optimized under the constraint of preserving an approximate dispersion-dissipation relation. By means of quasi-linear analyses and practical numerical experiments, a set of case-independent parameters is determined. The general formulation of arbitrarily high-order schemes is presented in a straightforward way. A variety of benchmark-test problems, including broadband waves, strong shock and contact discontinuities are studied. Compared to well-established classical WENO schemes, the present schemes exhibit significantly improved robustness, low numerical dissipation and sharp discontinuity capturing. They are particularly suitable for DNS and LES of shock-turbulence interactions.},
+  author = {Fu, L. and Hu, X. Y. and Adams, N. A.},
+  doi = {10.1016/j.jcp.2015.10.037},
+  isbn = {0021-9991},
+  issn = {10902716},
+  journal = {Journal of Computational Physics},
+  keywords = {ENO/WENO,High-order scheme,Optimal scheme,Shock-turbulence interaction,WENO-CU6,WENO-JS,WENO-Z},
+  pages = {333--359},
+  title = {{A family of high-order targeted ENO schemes for compressible-fluid simulations}},
+  url = {http://linkinghub.elsevier.com/retrieve/pii/S0021999115007147},
+  volume = {305},
+  year = {2016}
+}
+
+@article{Kaiser,
+  Author = {Kaiser, J. W. J. and Hoppe, N. and Adami, S. and Adams, N. A.},
+  Journal = {In preparation},
+  Title = {In preparation},
+  Year = {In preparation}
+}
+
+@article{Fedkiw1999a,
+  author = {Fedkiw, R. P. and Aslam, T. D. and Merriman, B. and Osher, S.},
+  journal = {Journal of Computational Physics},
+  keywords = {Level-Set},
+  pages = {457--492},
+  title = {{A Non-oscillatory Eulerian Approach to Interfaces in Multimaterial Flows (The Ghost Fluid Method)}},
+  volume = {152},
+  year = {1999}
+}
+
+@article{Roe1981,
+  author = {Roe, P. L.},
+  journal = {Journal of computational physics},
+  keywords = {Riemann solvers},
+  number = {2},
+  pages = {357--372},
+  title = {{Approximate Riemann solvers, parameter vectors, and difference schemes}},
+  url = {http://www.sciencedirect.com/science/article/pii/0021999181901285},
+  volume = {43},
+  year = {1981}
+}
+
+@incollection{Shu1999,
+  title={High order ENO and WENO schemes for computational fluid dynamics},
+  author={Shu, C. W.},
+  booktitle={High-order methods for computational physics},
+  pages={439--582},
+  year={1999},
+  publisher={Springer}
+}
+
+@article{Roussel2003,
+  abstract = {We present a new adaptive numerical scheme for solving parabolic PDEs in Cartesian geometry. Applying a finite volume discretization with explicit time integration, both of second order, we employ a fully adaptive multiresolution scheme to represent the solution on locally refined nested grids. The fluxes are evaluated on the adaptive grid. A dynamical adaption strategy to advance the grid in time and to follow the time evolution of the solution directly exploits the multiresolution representation. Applying this new method to several test problems in one, two and three space dimensions, like convection-diffusion, viscous Burgers and reaction-diffusion equations, we show its second-order accuracy and demonstrate its computational efficiency. {\textcopyright} 2003 Elsevier Science B.V. All rights reserved.},
+  author = {Roussel, O. and Schneider, K. and Tsigulin, A. and Bockhorn, H.},
+  doi = {10.1016/S0021-9991(03)00189-X},
+  isbn = {00219991},
+  issn = {00219991},
+  journal = {Journal of Computational Physics},
+  keywords = {Adaptivity,Finite volume,Multiresolution,Parabolic partial differential equation},
+  number = {2},
+  pages = {493--523},
+  title = {{A conservative fully adaptive multiresolution algorithm for parabolic PDEs}},
+  volume = {188},
+  year = {2003}
+}
+
+@article{Harten1993,
+  author = {Harten, A.},
+  journal = {Communications on Pure and Applied Mathematics},
+  number = {12},
+  pages = {1305--1342},
+  title = {{Multiresolution algorithms for the numerical solution of hyperbolic conservation laws}},
+  volume = {48},
+  year = {1993}
+}
+
+@book{Toro2009,
+  address = {Dordrecht ; New York},
+  author = {Toro, E. F.},
+  edition = {3rd ed},
+  isbn = {978-3-540-25202-3 978-3-540-49834-6},
+  keywords = {Computational fluid dynamics,Fluid dynamics},
+  pages = {724},
+  publisher = {Springer},
+  shorttitle = {Riemann solvers and numerical methods for fluid dy},
+  title = {{Riemann solvers and numerical methods for fluid dynamics: a practical introduction}},
+  year = {2009}
+}
+
+@article{borges2008,
+  title={An improved weighted essentially non-oscillatory scheme for hyperbolic conservation laws},
+  author={Borges, R. and Carmona, M. and Costa, B. and Don, W. S.},
+  journal={Journal of Computational Physics},
+  volume={227},
+  number={6},
+  pages={3191--3211},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{Balsara2000,
+  title={Monotonicity preserving weighted essentially non-oscillatory schemes with increasingly high order of accuracy},
+  author={Balsara, Dinshaw S and Shu, Chi-Wang},
+  journal={Journal of Computational Physics},
+  volume={160},
+  number={2},
+  pages={405--452},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@article{Sussman1994,
+  author = {Sussman, Mark and Smereka, Peter and Osher, Stanley},
+  journal = {J. Comput. Phys.},
+  pages = {146--159},
+  title = {{A Level Set Approach for Computing Solutions to Incompressible Two-Phase Flow}},
+  volume = {114},
+  year = {1994}
+}
+
+@article{Fu2016b,
+  author = {Fu, L. and Hu, X.Y. and Adams, N.A.},
+  journal = {Computer Physics Communications},
+  pages = {63--80},
+  title = {{Explicit reinitialization and extending algorithms for level-set based sharp-interface methods}},
+  volume = {221},
+  year = {2017}
+}
+
+@article{Lauer2012,
+  author = {Lauer, E. and Hu, X.Y. and Hickel, S. and Adams, N.A.},
+  journal = {Computer and Fluids},
+  pages = {1--19},
+  title = {{Numerical modelling and investigation of symmetric and asymmetric cavitation bubble dynamics}},
+  volume = {69},
+  year = {2012}
+}
+
+@article{Luo2015,
+  author = {Luo, J. and Hu, X.Y. and Adams, N.A.},
+  journal = {Journal of Computational Physics},
+  pages = {547--565},
+  title = {{A conservative sharp interface method fo incompressible multiphase flows}},
+  volume = {284},
+  year = {2015}
+}
+
+@article{Hu2006,
+  title={A conservative interface method for compressible flows},
+  author={Hu, XY and Khoo, BC and Adams, Nikolaus A and Huang, FL},
+  journal={Journal of Computational Physics},
+  volume={219},
+  number={2},
+  pages={553--578},
+  year={2006},
+  publisher={Elsevier}
+}
+
+@article{Fedkiw2000,
+  title={Simplified discretization of systems of hyperbolic conservation laws containing advection equations},
+  author={Fedkiw, Ronald P and Merriman, Barry and Osher, Stanley},
+  journal={Journal of Computational Physics},
+  volume={157},
+  number={1},
+  pages={302--326},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@article{Saurel2003,
+  author = {Saurel, R. and Gavrilyuk, S. and Renaud, F.},
+  journal = {Journal of Fluid Mechanics},
+  pages = {283--321},
+  title = {{A multiphase model with internal degrees of freedom: application to shock-bubble interaction}},
+  volume = {495},
+  year = {2003}
+}
+
+@article{Luo2016,
+  author = {Luo, J. and Hu, X.Y. and Adams, N.A.},
+  journal = {Journal of Computational Physics},
+  language = {en},
+  month = {mar},
+  pages = {411--420},
+  title = {{Efficient formulation of scale separation for multi-scale modeling of interfacial flows}},
+  volume = {308},
+  year = {2016}
+}
+
+@article{Balsara2016,
+  title={An efficient class of WENO schemes with adaptive order},
+  author={Balsara, Dinshaw S and Garain, Sudip and Shu, Chi-Wang},
+  journal={Journal of Computational Physics},
+  volume={326},
+  pages={780--804},
+  year={2016},
+  publisher={Elsevier}
+}
+
+@article{Min2010,
+  author = {Min, Chohong},
+  journal = {Journal of Computational Physics},
+  number = {8},
+  pages = {2764--2772},
+  publisher = {Elsevier Inc.},
+  title = {{On reinitializing level set functions}},
+  url = {http://dx.doi.org/10.1016/j.jcp.2009.12.032},
+  volume = {229},
+  year = {2010}
+}
+
+@article{Menikoff1989,
+  author = {Menikoff, R. and Plohr, B.J.},
+  journal = {Review of Modern Physics},
+  pages = {75--130},
+  title = {{The Riemann problem for fluid flow of real materials}},
+  volume = {61},
+  number={1},
+  year = {1989}
+}
+
+@article{Nourgaliev2007,
+  title={High-fidelity interface tracking in compressible flows: Unlimited anchored adaptive level set},
+  author={Nourgaliev, Robert R and Theofanous, Theo G},
+  journal={Journal of Computational Physics},
+  volume={224},
+  number={2},
+  pages={836--866},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@article{kang2000boundary,
+  title={A boundary condition capturing method for multiphase incompressible flow},
+  author={Kang, Myungjoo and Fedkiw, Ronald P and Liu, Xu-Dong},
+  journal={Journal of Scientific Computing},
+  volume={15},
+  number={3},
+  pages={323--360},
+  year={2000},
+  publisher={Springer}
+}
+
+@inproceedings{Hu2008,
+  title={Modeling full-Mach-range cavitating flow with sharp interface model},
+  author={Hu, XY and Adams, NA and Johnsen, E and Iaccarino, G},
+  booktitle={Proceedings of the Summer Program},
+  pages={183},
+  year={2008}
+}
+
+@article{Han2015,
+  author = {Han, L.H. and Hu, X.Y. and Adams, N.A.},
+  doi = {10.1016/j.jcp.2014.10.001},
+  issn = {10902716},
+  journal = {Journal of Computational Physics},
+  keywords = {Free-surface flows,Level set,Level-Set,Multi-scale modeling,Scale separation,Two-phase flows},
+  month = {jan},
+  pages = {387--403},
+  publisher = {Academic Press},
+  title = {{Scale separation for multi-scale modeling of free-surface and two-phase flows with the conservative sharp interface method}},
+  url = {https://www.sciencedirect.com/science/article/pii/S0021999114006755 http://linkinghub.elsevier.com/retrieve/pii/S0021999114006755},
+  volume = {280},
+  year = {2015}
+}
+
+@book{Bader2013,
+  address = {Berlin, Heidelberg},
+  author = {Bader, Michael},
+  doi = {10.1007/978-3-642-31046-1},
+  isbn = {978-3-642-31045-4},
+  publisher = {Springer Berlin Heidelberg},
+  series = {Texts in Computational Science and Engineering},
+  title = {{Space-Filling Curves}},
+  url = {http://link.springer.com/10.1007/978-3-642-31046-1},
+  volume = {9},
+  year = {2013}
+}
+
+@article{Sussman2000,
+  author = {Sussman, Mark and Puckett, Elbridge Gerry},
+  doi = {10.1006/jcph.2000.6537},
+  isbn = {0021-9991},
+  issn = {00219991},
+  journal = {Journal of Computational Physics},
+  keywords = {Curvature,Incompressible,Level set,Volume-of-fluid},
+  number = {2},
+  pages = {301--337},
+  title = {{A Coupled Level Set and Volume-of-Fluid Method for Computing 3D and Axisymmetric Incompressible Two-Phase Flows}},
+  volume = {162},
+  year = {2000}
+}
+
+@article{Fedkiw1999a,
+  author = {Fedkiw, Ronald P. and Aslam, Tariq D. and Merriman, Barry and Osher, Stanley},
+  journal = {Journal of Computational Physics},
+  pages = {457--492},
+  title = {{A Non-oscillatory Eulerian Approach to Interfaces in Multimaterial Flows (The Ghost Fluid Method)}},
+  volume = {152},
+  year = {1999}
+}
+
+@article{LeMetayer2016,
+  title = {The Noble-Abel Stiffened-Gas equation of state},
+  volume = {28},
+  issn = {1070-6631, 1089-7666},
+  url = {http://aip.scitation.org/doi/10.1063/1.4945981},
+  doi = {10.1063/1.4945981},
+  pages = {046102},
+  number = {4},
+  journal = {Physics of Fluids},
+  author = {Le Métayer, Olivier and Saurel, Richard},
+  date = {2016},
+}
+
+@article{Zeng2019,
+  title={A high performance fifth-order multistep WENO scheme},
+  author={Zeng, Fangjun and Shen, Yiqing and Liu, Shengping and Liu, Li},
+  journal={International Journal for Numerical Methods in Fluids},
+  publisher={Wiley Online Library}
+}
+
+@phdthesis{Meng2016b,
+  title = {{Numerical simulations of droplet Aerobreakup}},
+  author = {Meng, J. C.},
+  keywords = {Aerobreakup},
+  language = {en},
+  month = {may},
+  year = {2016}
+}
+
+@article{Einfeldt88,
+  title={On Godunov-type methods for gas dynamics},
+  author={Einfeldt, Bernd},
+  journal={SIAM Journal on Numerical Analysis},
+  volume={25},
+  number={2},
+  pages={294--318},
+  year={1988},
+  publisher={SIAM}
+}
+
+@article{Davis88,
+  title={Simplified second-order Godunov-type methods},
+  author={Davis, SF},
+  journal={SIAM Journal on Scientific and Statistical Computing},
+  volume={9},
+  number={3},
+  pages={445--473},
+  year={1988},
+  publisher={SIAM}
+}
+
+@article{Toro94,
+  title={Restoration of the contact surface in the HLL-Riemann solver},
+  author={Toro, Eleuterio F and Spruce, Michael and Speares, William},
+  journal={Shock waves},
+  volume={4},
+  number={1},
+  pages={25--34},
+  year={1994},
+  publisher={Springer}
+}
+
+@article{Coralic14,
+  title={Finite-volume WENO scheme for viscous compressible multicomponent flows},
+  author={Coralic, Vedran and Colonius, Tim},
+  journal={Journal of computational physics},
+  volume={274},
+  pages={95--121},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@article{Fleischmann20,
+  title={A low dissipation method to cure the grid-aligned shock instability},
+  author={Fleischmann, Nico and Adami, Stefan and Hu, Xiangyu Y and Adams, Nikolaus A},
+  journal={Journal of Computational Physics},
+  volume={401},
+  pages={109004},
+  year={2020},
+  publisher={Elsevier}
+}

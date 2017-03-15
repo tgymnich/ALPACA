@@ -1,0 +1,20 @@
+MESSAGE( STATUS "Set performance flags" )
+
+set(STANDARD_FLAGS "-m64 -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${STANDARD_FLAGS}")
+
+if( ALPACA_ENV STREQUAL "LRZ" )
+   set( MACHINE_FLAGS "-D PERFORMANCE -fp-model precise" )
+endif( ALPACA_ENV STREQUAL "LRZ" )
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MACHINE_FLAGS}")
+
+option(DBG "Debug" OFF)
+if(DBG)
+   set(ALPACA_CXX_FLAGS "-O0")
+   set(PACO_CXX_FLAGS "-O0")
+else(DBG)
+   set(ALPACA_CXX_FLAGS "-O3 -DNDEBUG")
+   set(PACO_CXX_FLAGS "")
+endif(DBG)
+
