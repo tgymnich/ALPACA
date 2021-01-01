@@ -16,17 +16,21 @@ l '>
 
 ## macOS
 
-`brew install tgymnich/tap/hdf5-mpich`  
-`brew install cmake`  
-`brew install paraview` 
+```
+brew install tgymnich/tap/hdf5-mpich
+brew install cmake
+brew install paraview 
 
+git clone https://github.com/tgymnich/ALPACA.git
+cd ALPACA
+git submodule update --init --recursive
+mkdir build && cd build
+cmake ..
+cmake --build .
 
-`git clone https://github.com/tgymnich/ALPACA.git` 
-`cd ALPACA`  
-`git submodule update --init --recursive`
-`mkdir build && cd build`
-`cmake ..`
-`cmake --build .`
+ulimit -s 65532
+mpirun -np 4 ./ALPACA ../inputfile.xml
+```
 
 # Terms of usage
 
