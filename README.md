@@ -12,6 +12,22 @@ l '>
 
 ⚠️ On macOS you have to increase the stack size by running `ulimit -s 65532`. This only mitigates the problem to a certain degree. If the new stack limit is reached ALPACA will still crash ⚠️
 
+# Install
+
+## macOS
+
+`brew install tgymnich/tap/hdf5-mpich`  
+`brew install cmake`  
+`brew install paraview` 
+
+
+`git clone https://github.com/tgymnich/ALPACA.git` 
+`cd ALPACA`  
+`git submodule update --init --recursive`
+`mkdir build && cd build`
+`cmake ..`
+`cmake --build .`
+
 # Terms of usage
 
 *ALPACA* is free software (GNU GPLv3), see the [LICENSE file](LICENSE) and/or sourcefile header in the repository. If you use *ALPACA*, please cite the following paper:
