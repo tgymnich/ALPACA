@@ -21,9 +21,8 @@ brew install tgymnich/tap/hdf5-mpich
 brew install cmake
 brew install paraview 
 
-git clone https://github.com/tgymnich/ALPACA.git
+git clone --recurse-submodules -j8 https://github.com/tgymnich/ALPACA.git
 cd ALPACA
-git submodule update --init --recursive
 mkdir build && cd build
 cmake ..
 cmake --build .
