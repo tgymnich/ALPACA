@@ -42,36 +42,32 @@ list(FILTER SOURCE_FILES EXCLUDE REGEX ".*user_expression.cpp$")
 include(CheckIPOSupported)
 check_ipo_supported( RESULT IPOPOSSIBLE )
 
+
+# Define the UserExpressions library.
+add_library(UserExpressions STATIC src/user_expression.cpp )
+if( IPOPOSSIBLE )
+   set_property(TARGET UserExpressions PROPERTY INTERPROCEDURAL_OPTIMIZATION True)
+endif( IPOPOSSIBLE )
+
+
 # Define the ALPACA executable.
 add_executable(ALPACA ${SOURCE_FILES})
 if( IPOPOSSIBLE )
    set_property(TARGET ALPACA PROPERTY INTERPROCEDURAL_OPTIMIZATION True)
 endif( IPOPOSSIBLE )
-set_target_properties(ALPACA PROPERTIES COMPILE_FLAGS "${ALPACA_CXX_FLAGS}")
-set( ALLUSEDFLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_COMPILE_FLAGS} ${CMAKE_CXX_LINK_FLAGS} ${ALPACA_CXX_FLAGS}" )
+set( ALLUSEDFLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_COMPILE_FLAGS} ${CMAKE_CXX_LINK_FLAGS}" )
 if( IPOPOSSIBLE )
    set( ALLUSEDFLAGS "${ALLUSEDFLAGS} ${CMAKE_CXX_COMPILE_OPTIONS_IPO}" )
 endif( IPOPOSSIBLE )
 MESSAGE( STATUS "Alpaca compiles and links using the following flags (without warranty, check VERBOSE build)\n-- ${ALLUSEDFLAGS}" )
 target_compile_definitions(ALPACA PUBLIC TEST_VIRTUAL=)
 
-target_link_libraries( ALPACA ${HDF5_LIBRARIES} )
+target_link_libraries(ALPACA ${HDF5_LIBRARIES})
+target_link_libraries(ALPACA UserExpressions)
 
-# Define the UserExpressions executable, encapsulating the expression toolkit from the rest of the program
-find_library(UserExpr NAMES UserExpressions PATHS ${CMAKE_CURRENT_BINARY_DIR})
-if(NOT UserExpr)
-   MESSAGE( STATUS "UserExpressions not found - will be build" )
-   add_library(UserExpressions STATIC src/user_expression.cpp )
-   if( IPOPOSSIBLE )
-      set_property(TARGET UserExpressions PROPERTY INTERPROCEDURAL_OPTIMIZATION True)
-   endif( IPOPOSSIBLE )
-   target_link_libraries(ALPACA UserExpressions)
-else(NOT UserExpr)
-   MESSAGE( STATUS "UserExpressions found at ${UserExpr}" )
-   target_link_libraries(ALPACA ${UserExpr})
-endif(NOT UserExpr)
 
 INCLUDE_DIRECTORIES(test)
+include(CTest)
 
 # Define a target for unit tests.
 file(GLOB_RECURSE TEST_FILES "test/*.cpp")
@@ -79,14 +75,19 @@ list(FILTER SOURCE_FILES EXCLUDE REGEX "src/main.cpp$")
 list(APPEND TEST_FILES "${SOURCE_FILES}")
 
 # Use additional flags for test coverage extraction
-set(PACO_CXX_FLAGS "-O0 -fprofile-arcs -ftest-coverage")
-set(GCOV_LIBRARY "-lgcov")
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+   set(PACO_CXX_FLAGS "-O0 -fprofile-arcs -ftest-coverage")
+   set(GCOV_LIBRARY "-lgcov")
+endif()
 
 add_executable(Paco EXCLUDE_FROM_ALL ${TEST_FILES})
 set_target_properties(Paco PROPERTIES EXCLUDE_FROM_ALL TRUE)
 set_target_properties(Paco PROPERTIES COMPILE_FLAGS "${PACO_CXX_FLAGS}")
 target_compile_definitions(Paco PUBLIC TEST_VIRTUAL=virtual)
 
-target_link_libraries( Paco ${HDF5_LIBRARIES} )
+target_link_libraries(Paco ${HDF5_LIBRARIES} )
 target_link_libraries(Paco ${GCOV_LIBRARY})
 target_link_libraries(Paco UserExpressions)
+
+add_test(NAME PACO_1_rank COMMAND mpiexec -n 1 ./Paco [1rank])
+add_test(NAME PACO_2_rank COMMAND mpiexec -n 2 ./Paco [2rank])
