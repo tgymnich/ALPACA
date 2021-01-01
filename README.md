@@ -10,7 +10,7 @@ l '>
 ```
 *ALPACA* is a MPI-parallelized C++ code framework to simulate compressible multiphase flow physics. It allows for advanced high-resolution sharp-interface modeling empowered with efficient multiresolution compression. The modular code structure offers a broad flexibility to select among many most-recent numerical methods covering WENO/T-ENO, Riemann solvers (complete/incomplete), strong-stability preserving Runge-Kutta time integration schemes, level-set methods and many more.  
 
-⚠️ On macOs you have to increase the stack size by running `ulimit -s 65532` ⚠️
+⚠️ On macOS you have to increase the stack size by running `ulimit -s 65532`. This only mitigates the problem to a certain degree. If the new stack limit is reached ALPACA will still crash ⚠️
 
 # Terms of usage
 
